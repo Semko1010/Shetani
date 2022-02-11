@@ -4,10 +4,11 @@ header{
     align-items: center;
     background-color: #171717;
     height: 70px;
+    
 ;
 }
 header > img{
-    margin: 0 0 0 5vh;
+    margin: 0 0 0 6vh;
 }
 header div img{
     cursor: pointer;

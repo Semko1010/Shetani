@@ -1,21 +1,28 @@
 .menuSection{
+    margin:2vh 0 0 0;
     background-color: #1F1F1F;
     display: flex;
     justify-content:space-between;
+    
 }
 .menuSection h2:nth-of-type(1){
- color: white;   
+ color: white;  
+ margin: 0 30px 0 30px;; 
+ cursor: pointer;
 }
 .menuSection h2:nth-of-type(2){
     color: #247BFF;
-
+    margin: 0 30px 0 30px;
+    cursor: pointer;
 }
 .menuSection > div{
     display: flex;
     align-items: center;
 }
+.menuSection  img:nth-of-type(1){
+   margin: 0 0 0 5vw;
+}
 .menuSection  img:nth-of-type(2){
     width: 30px;
     height:30px;
-    
 }

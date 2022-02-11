@@ -1,0 +1,27 @@
+.startSection{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #292929;
+    height:50px;
+    margin:5vh 0 0 5vw;
+    width:93vw;
+}
+.startSection button{
+    background-color: #247BFF;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    
+}
+.startSection button:hover{
+    background-color: #3e8bff;
+}
+.startSection p{
+color: white;
+}
+.playImg{
+    margin: 0 5vw 0 0;
+}

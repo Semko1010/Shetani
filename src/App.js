@@ -2,7 +2,9 @@ import "./App.css"
 import Header from "./component/Header/Header"
 import Menu from "./component/Menu/Menu"
 import SideBar from "./component/SideBar/SideBar"
-import Article from './component/Article/Artcle'
+import StartAction from "./component/StartAction/StartAction"
+import Article from './component/Article/Article'
+import ArticleProps from "./component/ArticleProps/ArticleProps"
 
 function App() {
   return (
@@ -10,6 +12,11 @@ function App() {
     <Header/>
     <Menu/>
     <SideBar/>
+    <StartAction/>
+    
+      <ArticleProps/>
+      
+    
     </div>
   );
 }

@@ -1,9 +1,14 @@
-import Article from "../Article/Artcle"
+import Article from "../Article/Article"
 
 const ArticleProps = () => {
     return ( 
-        <section>
-
+        <section className="articleSectionGrid">
+        <Article
+        salesRate ={"5%"}
+        />
+        <Article
+        salesRate ={"4%"}
+        />
         </section>
      );
 }

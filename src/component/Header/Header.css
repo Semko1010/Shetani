@@ -1,0 +1,13 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #171717;
+;
+}
+header > img{
+    margin: 0 0 0 5vh;
+}
+header div img{
+    cursor: pointer;
+}

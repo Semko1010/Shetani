@@ -11,6 +11,7 @@ const Header = () => {
                 <img src="./img/user.png" alt="" />
                 
             </div>
+            
         </header>
      );
 }

@@ -1,0 +1,21 @@
+.sideBar{
+    background: linear-gradient(180deg, #247BFF 0%, #0752C4 100%);
+    width: 44px;
+    height: 97vh;
+    position: fixed;
+    top: 1.5vh;
+    left: 0;
+    border-radius: 0 10px 10px 0;
+    
+    
+}
+.sideBar section{
+margin: 20px 0 0 0;
+   text-align: center;
+}
+.sideBar div{
+    width: 15px;
+    height:2px;
+    background-color: white;
+    margin: 3px auto ;
+}

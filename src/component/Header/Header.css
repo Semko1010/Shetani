@@ -3,6 +3,7 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: #171717;
+    height: 70px;
 ;
 }
 header > img{

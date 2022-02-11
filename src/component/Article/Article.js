@@ -28,19 +28,19 @@ const Article = (props) => {
         </div>
         <div>
             <p>1st Sales</p>
-            <p>10<img src="./img/red.png" alt="" /> </p>
+            <p>{props.firstSales}<img src="./img/red.png" alt="" /> </p>
         </div>
         <div>
             <p>Items per week</p>
-            <p>1,1 <img src="./img/orange.png" alt="" /> </p>
+            <p>{props.perWeek} <img src="./img/orange.png" alt="" /> </p>
         </div>
         <div>
             <p>Return rate</p>
-            <p>2% <img src="./img/red.png" alt="" /> </p>
+            <p>{props.returnRate} <img src="./img/red.png" alt="" /> </p>
         </div>
         <div>
             <p>Sale Price</p>
-            <p>69,59€  </p>
+            <p>{props.price}</p>
         </div>
         </div>
     </article>

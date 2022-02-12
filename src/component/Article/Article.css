@@ -1,4 +1,5 @@
 .articleSection {
+    position: relative;
 background-color: #292929;
 margin: 3vh 0 0 5vw;
 width: 30vw;
@@ -92,10 +93,10 @@ color: #247BFF;
 font-size: 1.4rem;
 font-weight: 800;
 }
+/*UnvisibleMenu*/
 
 .unvisibleMenu {
 margin: 10vh 0 0 0;
-
 }
 .unvisibleMenu button{
 display: block;
@@ -111,4 +112,18 @@ font-size: 1.1rem;
 .unvisibleMenu button:hover{
 background-color: white;
 color: black;
+}
+/*ArticleSelection*/
+.articleSelection{
+    bottom: 0;
+    position: absolute;
+    height:30vh;
+    width:100%;
+    text-align:center;
+    background: linear-gradient(180deg, rgba(25, 47, 81, 0) 0%, #192F51 66.67%);
+}
+.articleSelection input{
+    margin-top: 20vh;
+width: 40px;
+height: 40px;
 }

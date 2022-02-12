@@ -12,7 +12,7 @@ function App() {
     <Header/>
     <Menu/>
     <SideBar/>
-    <StartAction/>
+   
     
       <ArticleProps/>
       

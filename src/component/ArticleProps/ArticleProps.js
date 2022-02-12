@@ -1,9 +1,14 @@
 import "./ArticleProps.css"
 import Article from "../Article/Article"
+import StartAction from "../StartAction/StartAction"
+const ArticleProps = (props) => {
+    return (
+        <div>
+            <StartAction articleSelect={props.articleSelect}/>
 
-const ArticleProps = () => {
-    return ( 
+    
         <section className="articleSectionGrid">
+         
         <Article
         salesRate = {"80%"}
         firstSales = {"12"}
@@ -83,6 +88,7 @@ const ArticleProps = () => {
         ReturnRateStatus = {"green"}
         />
         </section>
+        </div>
      );
 }
  

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./StartAction.css"
-const StartAction = () => {
+const StartAction = (props) => {
     const [startActionBtn, setstartActionBtn] = useState(false)
 
 const selectArticles = () => {

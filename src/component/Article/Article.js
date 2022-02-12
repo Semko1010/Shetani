@@ -1,9 +1,12 @@
+import StartAction from "../StartAction/StartAction"
 import { useState } from 'react'
 import "./Article.css"
-
+const Array = []
 const Article = (props) => {
-    const [visibleMenu, setvisibleMenu] = useState(true)
     
+    const [visibleMenu, setvisibleMenu] = useState(true)
+    const [articleSelection,setarticleSelection] = useState(true)
+    const [articleValue, setArticleValue] = useState([])
     
     const showMenu = () => {
         setvisibleMenu(false) 
@@ -12,14 +15,37 @@ const Article = (props) => {
     const closeMenu = () => {
         setvisibleMenu(true) 
     }
+    const articleSelect = () => {
+        setarticleSelection(true)
+        
+    }
     
-    
+    const articleValuea = () => {
+
+       
+        Array.push(props.tshirtNummer)
+        
+        Array.filter( function( item, index, inputArray ) {
+            return inputArray.indexOf(item) == index
+            
+     });
+ 
+            
+           
+        
+            
+            console.log(Array);
+
+}
+
+// Array.push({articleNumber:props.tshirtNummer,price:props.price})
     return (
       
         
     <section className="articleSection">
     {visibleMenu ?(
     <section>
+        
     <div>
             <img src="./img/pause-circle.png" alt="" />
         <div>
@@ -28,13 +54,13 @@ const Article = (props) => {
         </div>
             <img  src={`./img/${props.allStatus}.png`} alt="" />
     </div>
-
+    
     <article>
 
     
         <div>
             <img onClick={showMenu} className="tshirtImg" src="./img/tshirt.png" alt="" />
-            <h3>T-Shirt - #34224</h3>
+            <h3>T-Shirt - #{props.tshirtNummer}</h3>
         </div>
         <div className="articleDiv">
         <div>
@@ -109,6 +135,14 @@ const Article = (props) => {
         <button onClick={closeMenu}>Cancel</button>
     </section>
 )}
+{articleSelection &&(
+<section className="articleSelection">
+    <label htmlFor="Select Item"></label>
+<input onClick={articleValuea} type="checkbox" id="checking"/>
+
+</section>
+    )}
+    {/* <StartAction articleSelect={articleSelect}/> */}
     </section>
 );
 }

@@ -5,31 +5,43 @@ const ArticleProps = () => {
     return ( 
         <section className="articleSectionGrid">
         <Article
-        salesRate = {"5%"}
+        salesRate = {"80%"}
         firstSales = {"12"}
         perWeek = {"1.2"}
-        returnRate = {"3%"}
+        returnRate = {"2%"}
         price = {"69,50€"}
         tshirtNummer = {"21455"}
-        status = {"orange"}
+        allStatus = {"green"}
+        salesStatus = {"green"}
+        stStatus = {"green"}
+        perWeekStatus = {"green"}
+        ReturnRateStatus = {"green"}
         />
         <Article
-        salesRate = {"4%"}
-        firstSales = {"17"}
-        perWeek = {"1.4"}
-        returnRate = {"3%"}
+        salesRate = {"3%"}
+        firstSales = {"10"}
+        perWeek = {"1.1"}
+        returnRate = {"2%"}
         price = {"62,50€"}
         tshirtNummer = {"25335"}
-        status = {"red"}
+        allStatus = {"red"}
+        salesStatus = {"orange"}
+        stStatus = {"red"}
+        perWeekStatus = {"orange"}
+        ReturnRateStatus = {"red"}
         />
         <Article
-        salesRate = {"4%"}
-        firstSales = {"15"}
+        salesRate = {"2%"}
+        firstSales = {"10"}
         perWeek = {"1.1"}
-        returnRate = {"4%"}
+        returnRate = {"2%"}
         price = {"65,50€"}
         tshirtNummer = {"24355"}
-        status = {"red"}
+        allStatus = {"red"}
+        salesStatus = {"red"}
+        stStatus = {"red"}
+        perWeekStatus = {"red"}
+        ReturnRateStatus = {"red"}
         />
         <Article
         salesRate = {"4%"}
@@ -38,7 +50,11 @@ const ArticleProps = () => {
         returnRate = {"5%"}
         price = {"65,50€"}
         tshirtNummer = {"12355"}
-        status = {"Orange"}
+        allStatus = {"red"}
+        salesStatus = {"red"}
+        stStatus = {"orange"}
+        perWeekStatus = {"red"}
+        ReturnRateStatus = {"orange"}
         />
         <Article
         salesRate = {"1%"}
@@ -47,7 +63,11 @@ const ArticleProps = () => {
         returnRate = {"2%"}
         price = {"67,50€"}
         tshirtNummer = {"21255"}
-        status = {"red"}
+        allStatus = {"red"}
+        salesStatus = {"red"}
+        stStatus = {"orange"}
+        perWeekStatus = {"red"}
+        ReturnRateStatus = {"red"}
         />
         <Article
         salesRate = {"1%"}
@@ -56,7 +76,11 @@ const ArticleProps = () => {
         returnRate = {"1%"}
         price = {"64,50€"}
         tshirtNummer = {"25435"}
-        status = {"red"}
+        allStatus = {"green"}
+        salesStatus = {"green"}
+        stStatus = {"green"}
+        perWeekStatus = {"green"}
+        ReturnRateStatus = {"green"}
         />
         </section>
      );

@@ -3,7 +3,6 @@ background-color: #292929;
 margin: 3vh 0 0 5vw;
 width: 30vw;
 
-    
 }
 
 .articleSection >div{
@@ -12,6 +11,7 @@ justify-content: space-around;
 align-items:center
 }
 .articleSection >div >div{
+
 text-align: center;
 color: white;
 }
@@ -76,4 +76,39 @@ justify-content: space-between;
 align-items: center;
 height: 30px;
 margin: 10px;
+}
+
+/*Footer*/
+footer{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align:center;
+}
+
+footer h3{
+color: white;
+}
+footer p{
+color: #247BFF;
+font-size: 1.4rem;
+font-weight: 800;
+}
+
+.unvisibleMenu {
+
+}
+.unvisibleMenu button{
+display: block;
+width: 20vw;
+margin: 10px auto;
+padding:20px 0;
+background-color: #247BFF; 
+cursor: pointer;
+border: none;
+color: white;
+font-size: 1.1rem;
+}
+.unvisibleMenu button:hover{
+background-color: white;
+color: black;
 }

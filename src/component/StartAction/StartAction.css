@@ -4,8 +4,8 @@
     align-items: center;
     background-color: #292929;
     height:50px;
-    margin:5vh 0 0 5vw;
-    width:93vw;
+    margin:5vh 2vw 0 5vw;
+    
 }
 .startSection button{
     background-color: #247BFF;
@@ -15,6 +15,12 @@
     border: none;
     cursor: pointer;
     
+}
+.startSection input{
+    display: inline;
+    width: 25px;
+    height: 25px;
+    margin: 0px 0 0 30px;
 }
 .startSection button:hover{
     background-color: #3e8bff;

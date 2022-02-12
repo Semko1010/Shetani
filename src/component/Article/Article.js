@@ -2,19 +2,23 @@ import { useState } from 'react'
 import "./Article.css"
 
 const Article = (props) => {
-    const [visible, setVisible] = useState(true)
-
+    const [visibleMenu, setvisibleMenu] = useState(true)
+    
+    
     const showMenu = () => {
-       setVisible(false) 
+        setvisibleMenu(false) 
     }
+    
     const closeMenu = () => {
-       setVisible(true) 
+        setvisibleMenu(true) 
     }
+    
+    
     return (
       
         
     <section className="articleSection">
-    {visible ?(
+    {visibleMenu ?(
     <section>
     <div>
             <img src="./img/pause-circle.png" alt="" />

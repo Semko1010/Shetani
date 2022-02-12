@@ -8,13 +8,11 @@ height: 50vh;
 .articleSection section >div{
 display: flex;
 justify-content: space-around;
-align-items:center
-}
-.articleSection >div >div{
-
+align-items:center;
 text-align: center;
 color: white;
 }
+
 .articleSection article{
 display: flex;
 justify-content: space-around;
@@ -97,6 +95,7 @@ font-weight: 800;
 
 .unvisibleMenu {
 margin: 10vh 0 0 0;
+
 }
 .unvisibleMenu button{
 display: block;

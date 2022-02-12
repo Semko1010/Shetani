@@ -2,10 +2,10 @@
 background-color: #292929;
 margin: 3vh 0 0 5vw;
 width: 30vw;
-
+height: 50vh;
 }
 
-.articleSection >div{
+.articleSection section >div{
 display: flex;
 justify-content: space-around;
 align-items:center
@@ -27,6 +27,7 @@ color: white;
 }
 .tshirtImg{
     width: 100%;
+    cursor: pointer;
 }
 
 .articleSection article p{
@@ -95,7 +96,7 @@ font-weight: 800;
 }
 
 .unvisibleMenu {
-
+margin: 10vh 0 0 0;
 }
 .unvisibleMenu button{
 display: block;

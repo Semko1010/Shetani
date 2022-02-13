@@ -120,7 +120,7 @@ color: black;
     height:30vh;
     width:100%;
     text-align:center;
-    background: linear-gradient(180deg, rgba(25, 47, 81, 0) 0%, #192F51 66.67%);
+    background: linear-gradient(180deg, rgba(4, 85, 208, 0) 0%, #192F51 66.67%);
 }
 .articleSelection input{
     margin-top: 20vh;

@@ -1,9 +1,10 @@
 import "./ArticleProps.css"
+
 import { useState } from "react"
 import Article from "../Article/Article"
 import StartAction from "../StartAction/StartAction"
 import {Array} from "../Article/Article"
-
+const  itemsLength = [];
 const ArticleProps = () => {
 const [checkBoxAll, setcheckBoxAll] = useState(false)
    
@@ -13,20 +14,18 @@ const [checkBoxAll, setcheckBoxAll] = useState(false)
         if(!checkBoxAll){
             boxes.forEach(checkbox =>{
             checkbox.checked = true
-            console.log(checkbox);
             Array.push(checkbox.value)
+            itemsLength.push(checkbox.length)
             console.log(Array);
             })
         }else{
             boxes.forEach(checkbox =>{
                 checkbox.checked = false
-                console.log(checkbox);
-
                 Array.filter(item =>{
-                    console.log(item);
                     if(item === checkbox.value){
                     const indexArray =Array.indexOf(item)
                     Array.splice(indexArray,1)
+                    console.log(Array);
                     }
                 
                     })
@@ -35,17 +34,14 @@ const [checkBoxAll, setcheckBoxAll] = useState(false)
         }
         
         
-      
-        
-    
 }
     return (
         <div>
-            <StartAction selectAll={selectAll}/>
+        <StartAction selectAll={selectAll}/>
 
-    
+       
         <section className="articleSectionGrid">
-         
+        
         <Article
         salesRate = {"80%"}
         firstSales = {"12"}

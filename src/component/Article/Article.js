@@ -1,6 +1,7 @@
 import StartAction from "../StartAction/StartAction"
 import { useState } from 'react'
 import "./Article.css"
+import { render } from "@testing-library/react";
 const Array = [];
 
 
@@ -20,18 +21,17 @@ const Article = (props) => {
         setvisibleMenu(true) 
     }
     const articleSelect = () => {
+        console.log("test");
         setarticleSelection(true)
      
     }
     
 
-const checkBox = () =>{
-    const checking = document.getElementById("checking")
-    
-    setCheckbox(!checkbox)
-    if(checkbox){
-    Array.push(dataItems)
-    setArticleValue(Array)
+    const checkBox = () =>{
+        setCheckbox(!checkbox)
+        if(checkbox){
+        Array.push(dataItems)
+        setArticleValue(Array)
 }
     else if(!checkbox){
         Array.filter(item =>{
@@ -43,15 +43,16 @@ const checkBox = () =>{
         })
         
     }
-console.log(Array);
-console.log(dataItems);
+        console.log(Array);
+        
 
 }
 
 
-
 return (
+    
 <section className="articleSection">
+
     {visibleMenu ?(
     <section>
         
@@ -157,4 +158,5 @@ return (
 );
 }
 export {Array}
+
 export default Article;

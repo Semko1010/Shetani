@@ -1,10 +1,10 @@
 import "./ArticleProps.css"
 import Article from "../Article/Article"
 import StartAction from "../StartAction/StartAction"
-const ArticleProps = (props) => {
+const ArticleProps = () => {
     return (
         <div>
-            <StartAction articleSelect={props.articleSelect}/>
+            <StartAction/>
 
     
         <section className="articleSectionGrid">

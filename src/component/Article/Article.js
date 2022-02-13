@@ -1,12 +1,13 @@
 import StartAction from "../StartAction/StartAction"
 import { useState } from 'react'
 import "./Article.css"
-const Array = []
+const Array = [];
 const Article = (props) => {
     
     const [visibleMenu, setvisibleMenu] = useState(true)
     const [articleSelection,setarticleSelection] = useState(true)
-    const [articleValue, setArticleValue] = useState([])
+    const [articleValue, setArticleValue] = useState()
+    const [checkbox, setCheckbox] = useState(true)
     
     const showMenu = () => {
         setvisibleMenu(false) 
@@ -17,28 +18,32 @@ const Article = (props) => {
     }
     const articleSelect = () => {
         setarticleSelection(true)
-        
     }
     
-    const articleValuea = () => {
 
-       
+const checkBox = () =>{
+    setCheckbox(!checkbox)
+    if(checkbox){
+        if(Array == false){
+            Array.push(props.tshirtNummer)
+        }
+        Array.find(item =>{
+        if(!Array.includes(props.tshirtNummer)){
         Array.push(props.tshirtNummer)
         
-        Array.filter( function( item, index, inputArray ) {
-            return inputArray.indexOf(item) == index
-            
-     });
- 
-            
-           
-        
-            
-            console.log(Array);
+        }
 
+    })
+}
+    else if(!checkbox){
+    
+        
+    }
+  
+  console.log(Array);
 }
 
-// Array.push({articleNumber:props.tshirtNummer,price:props.price})
+
     return (
       
         
@@ -138,7 +143,7 @@ const Article = (props) => {
 {articleSelection &&(
 <section className="articleSelection">
     <label htmlFor="Select Item"></label>
-<input onClick={articleValuea} type="checkbox" id="checking"/>
+<input onChange={checkBox} type="checkbox" id="checking" value ={props.tshirtNumber}/>
 
 </section>
     )}

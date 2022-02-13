@@ -36,7 +36,14 @@ const checkBox = () =>{
     })
 }
     else if(!checkbox){
+        Array.find(item =>{
+        if(item == props.tshirtNummer){
+        const test =Array.indexOf(item)
+        console.log(test);
+        Array.splice(test,1)
+        }
     
+        })
         
     }
   

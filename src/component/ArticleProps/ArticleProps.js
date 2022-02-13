@@ -1,11 +1,47 @@
 import "./ArticleProps.css"
+import { useState } from "react"
 import Article from "../Article/Article"
 import StartAction from "../StartAction/StartAction"
+import {Array} from "../Article/Article"
 
 const ArticleProps = () => {
+const [checkBoxAll, setcheckBoxAll] = useState(false)
+   
+    const selectAll = () => {
+        let boxes = document.querySelectorAll(".checking")
+        setcheckBoxAll(!checkBoxAll)
+        if(!checkBoxAll){
+            boxes.forEach(checkbox =>{
+            checkbox.checked = true
+            console.log(checkbox);
+            Array.push(checkbox.value)
+            console.log(Array);
+            })
+        }else{
+            boxes.forEach(checkbox =>{
+                checkbox.checked = false
+                console.log(checkbox);
+
+                Array.filter(item =>{
+                    console.log(item);
+                    if(item === checkbox.value){
+                    const indexArray =Array.indexOf(item)
+                    Array.splice(indexArray,1)
+                    }
+                
+                    })
+                })
+                
+        }
+        
+        
+      
+        
+    
+}
     return (
         <div>
-            <StartAction/>
+            <StartAction selectAll={selectAll}/>
 
     
         <section className="articleSectionGrid">
@@ -22,6 +58,7 @@ const ArticleProps = () => {
         stStatus = {"green"}
         perWeekStatus = {"green"}
         ReturnRateStatus = {"green"}
+        
         />
         <Article
         salesRate = {"3%"}
@@ -35,6 +72,7 @@ const ArticleProps = () => {
         stStatus = {"red"}
         perWeekStatus = {"orange"}
         ReturnRateStatus = {"red"}
+        
         />
         <Article
         salesRate = {"2%"}
@@ -48,6 +86,7 @@ const ArticleProps = () => {
         stStatus = {"red"}
         perWeekStatus = {"red"}
         ReturnRateStatus = {"red"}
+        
         />
         <Article
         salesRate = {"4%"}
@@ -61,6 +100,7 @@ const ArticleProps = () => {
         stStatus = {"orange"}
         perWeekStatus = {"red"}
         ReturnRateStatus = {"orange"}
+       
         />
         <Article
         salesRate = {"1%"}
@@ -74,6 +114,7 @@ const ArticleProps = () => {
         stStatus = {"orange"}
         perWeekStatus = {"red"}
         ReturnRateStatus = {"red"}
+        
         />
         <Article
         salesRate = {"1%"}
@@ -87,6 +128,7 @@ const ArticleProps = () => {
         stStatus = {"green"}
         perWeekStatus = {"green"}
         ReturnRateStatus = {"green"}
+       
         />
         </section>
         </div>

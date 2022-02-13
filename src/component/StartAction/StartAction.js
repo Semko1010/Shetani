@@ -12,7 +12,7 @@ const selectArticles = () => {
             <div>
             <button onClick={selectArticles} style={{backgroundColor: startActionBtn ? "#FF5252" : "#247BFF"}}> <img src="./img/start.png" alt="" /> Start Action</button>
             {startActionBtn &&(
-            <input type="checkbox" />
+            <input onChange={props.selectAll} type="checkbox" />
             ) }
             </div>
             <p>223 Items</p>

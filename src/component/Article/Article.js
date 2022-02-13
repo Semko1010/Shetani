@@ -5,11 +5,12 @@ const Array = [];
 
 
 const Article = (props) => {
-    const dataItems= {salesRate:props.salesRate,firstSales:props.firstSales,perWeek:props.perWeek,returnRate:props.returnRate,price:props.price,tshirtNummer:props.tshirtNummer}
+    const dataItems = {salesRate:props.salesRate,firstSales:props.firstSales,perWeek:props.perWeek,returnRate:props.returnRate,price:props.price,tshirtNummer:props.tshirtNummer}
     const [visibleMenu, setvisibleMenu] = useState(true)
     const [articleSelection,setarticleSelection] = useState(true)
     const [articleValue, setArticleValue] = useState([])
     const [checkbox, setCheckbox] = useState(true)
+    
     
     const showMenu = () => {
         setvisibleMenu(false) 
@@ -20,10 +21,12 @@ const Article = (props) => {
     }
     const articleSelect = () => {
         setarticleSelection(true)
+     
     }
     
 
 const checkBox = () =>{
+    const checking = document.getElementById("checking")
     
     setCheckbox(!checkbox)
     if(checkbox){
@@ -41,7 +44,8 @@ const checkBox = () =>{
         
     }
 console.log(Array);
-console.log(articleValue);
+console.log(dataItems);
+
 }
 
 
@@ -142,8 +146,9 @@ return (
 )}
 {articleSelection &&(
 <section className="articleSelection">
-    <label htmlFor="Select Item"></label>
-<input onChange={checkBox} type="checkbox" id="checking" value ={props.tshirtNumber}/>
+<label htmlFor="Select Item"></label>
+<input onChange={checkBox} type="checkbox"   className="checking" value ={props.tshirtNummer}  
+  />
 
 </section>
     )}
@@ -151,5 +156,5 @@ return (
     </section>
 );
 }
-
+export {Array}
 export default Article;

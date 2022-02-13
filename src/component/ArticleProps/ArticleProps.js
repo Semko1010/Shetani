@@ -1,6 +1,7 @@
 import "./ArticleProps.css"
 import Article from "../Article/Article"
 import StartAction from "../StartAction/StartAction"
+
 const ArticleProps = () => {
     return (
         <div>

@@ -2,11 +2,13 @@ import StartAction from "../StartAction/StartAction"
 import { useState } from 'react'
 import "./Article.css"
 const Array = [];
+
+
 const Article = (props) => {
-    
+    const dataItems= {salesRate:props.salesRate,firstSales:props.firstSales,perWeek:props.perWeek,returnRate:props.returnRate,price:props.price,tshirtNummer:props.tshirtNummer}
     const [visibleMenu, setvisibleMenu] = useState(true)
     const [articleSelection,setarticleSelection] = useState(true)
-    const [articleValue, setArticleValue] = useState()
+    const [articleValue, setArticleValue] = useState([])
     const [checkbox, setCheckbox] = useState(true)
     
     const showMenu = () => {
@@ -22,39 +24,30 @@ const Article = (props) => {
     
 
 const checkBox = () =>{
+    
     setCheckbox(!checkbox)
     if(checkbox){
-        if(Array == false){
-            Array.push(props.tshirtNummer)
-        }
-        Array.find(item =>{
-        if(!Array.includes(props.tshirtNummer)){
-        Array.push(props.tshirtNummer)
-        
-        }
-
-    })
+    Array.push(dataItems)
+    setArticleValue(Array)
 }
     else if(!checkbox){
-        Array.find(item =>{
-        if(item == props.tshirtNummer){
-        const test =Array.indexOf(item)
-        console.log(test);
-        Array.splice(test,1)
+        Array.filter(item =>{
+        if(item.tshirtNummer === props.tshirtNummer){
+        const indexArray =Array.indexOf(item)
+        Array.splice(indexArray,1)
         }
     
         })
         
     }
-  
-  console.log(Array);
+console.log(Array);
+console.log(articleValue);
 }
 
 
-    return (
-      
-        
-    <section className="articleSection">
+
+return (
+<section className="articleSection">
     {visibleMenu ?(
     <section>
         

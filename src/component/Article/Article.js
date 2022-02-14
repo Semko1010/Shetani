@@ -1,17 +1,18 @@
 import StartAction from "../StartAction/StartAction"
 import { useState , useContext } from 'react'
+import {allCheckBoxes} from "../../App"
 import "./Article.css"
-import { render } from "@testing-library/react";
+
 const Array = [];
 
 
 const Article = (props) => {
     const dataItems = {salesRate:props.salesRate,firstSales:props.firstSales,perWeek:props.perWeek,returnRate:props.returnRate,price:props.price,tshirtNummer:props.tshirtNummer}
     const [visibleMenu, setvisibleMenu] = useState(true)
-    const [articleSelection,setarticleSelection] = useState(true)
+    // const [articleSelection,setarticleSelection] = useState(false)
     const [articleValue, setArticleValue] = useState([])
     const [checkbox, setCheckbox] = useState(true)
-    
+    const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
     
     const showMenu = () => {
         setvisibleMenu(false) 

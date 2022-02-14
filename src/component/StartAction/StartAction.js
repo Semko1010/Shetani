@@ -1,13 +1,16 @@
-import { useState } from "react"
+import { useState , useContext} from "react"
 import {Array} from "../Article/Article"
+import {allCheckBoxes} from "../../App"
 import "./StartAction.css"
 const  itemsLength = [];
 const StartAction = (props) => {
     const [checkBoxAll, setcheckBoxAll] = useState(false)
     const [startActionBtn, setstartActionBtn] = useState(false)
     const [countItems, setCountItems] = useState("223 Items")
+    const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
     
     const selectAll = () => {
+        
         let boxes = document.querySelectorAll(".checking")
         setcheckBoxAll(!checkBoxAll)
         if(!checkBoxAll){
@@ -37,6 +40,7 @@ const StartAction = (props) => {
 
 
     const selectArticles = () => {
+        setarticleSelection(!articleSelection)
         setstartActionBtn(!startActionBtn)
         if(!startActionBtn){
         let boxes = document.querySelectorAll(".checking")

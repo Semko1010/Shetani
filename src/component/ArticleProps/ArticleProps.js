@@ -1,9 +1,7 @@
 import "./ArticleProps.css"
-
-import { useState } from "react"
 import Article from "../Article/Article"
 import StartAction from "../StartAction/StartAction"
-import {Array} from "../Article/Article"
+
 
 const ArticleProps = () => {
 

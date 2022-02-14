@@ -70,8 +70,8 @@ const StartActionButton = () => {
             ) }
             </div>
             <p>{`${articleSelection ? checkBoxValue : ""} ${countItems} `}</p>
-            <Link to="/selectedTshirts">Klick</Link>
-            <img className="playImg" src="./img/play-circle.png" alt="" />
+            <Link to="/selectedTshirts"> <button onClick={()=>{setarticleSelection(!articleSelection)}}><img className="playImg" src="./img/play-circle.png" alt="" /></button> </Link>
+            
         </section>
       );
 }

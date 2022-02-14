@@ -41,7 +41,7 @@ const inputSelectAllCheckbox = () => {
             })
             })
             for(var i=0; i<boxes.length; i++){
-                setCountItems(`0 of ${i + 1} items selected`)
+                setCountItems(` ${i + 1} items selected`)
             }    
         }
     }
@@ -56,7 +56,7 @@ const StartActionButton = () => {
     
     if(!articleSelection){
     for (let i = 0; i < boxes.length; i++) {
-    setCountItems(`0 of ${i + 1} items selected`)    
+    setCountItems(` of ${i + 1}  items selected`)    
 }
 }
     else{
@@ -73,7 +73,7 @@ const StartActionButton = () => {
             <input onChange={inputSelectAllCheckbox} type="checkbox" />
             ) }
             </div>
-            <p>{countItems}</p>
+            <p>{`${checkBoxValue} ${countItems} `}</p>
             <img className="playImg" src="./img/play-circle.png" alt="" />
         </section>
       );

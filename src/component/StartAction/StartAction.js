@@ -1,16 +1,15 @@
 import "./StartAction.css"
 import { useState , useContext} from "react"
 import {Array} from "../Article/Article"
-import {allCheckBoxes,allCheckBoxesValue} from "../../App"
+import {allCheckBoxes,allCheckBoxesValue,CheckBoxesValue} from "../../App"
 
 const  itemsLength = [];
 const StartAction = () => {
     const [countItems, setCountItems] = useState("223 Items")
-    const [allCheckBoxesValues, setAllCheckBoxesValues] = useState(0)
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
     const {checkBoxAll, setcheckBoxAll} = useContext(allCheckBoxesValue)
-
-
+    const {checkBoxAllValue, setcheckBoxAllValue} = useContext(allCheckBoxesValue)
+    const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
 
 
 
@@ -23,8 +22,9 @@ const inputSelectAllCheckbox = () => {
             boxes.forEach(checkbox =>{
             checkbox.checked = true
             Array.push(checkbox.value)
+ /*for loop for text 0 of 6 items*/
             for(var i=0; i<boxes.length; i++){
-                setCountItems(`${i + 1} of ${i + 1} items selected`)
+            setCountItems(`${i + 1} of ${i + 1} items selected`)
             }
             console.log(Array);
             })
@@ -44,9 +44,7 @@ const inputSelectAllCheckbox = () => {
                 setCountItems(`0 of ${i + 1} items selected`)
             }    
         }
-       
-        console.log(allCheckBoxesValues);
-}
+    }
 
 
 /*Function to toggle the background color of the START ACTION button, and to change the text from 223 Items to (0 of tshirt.length)*/

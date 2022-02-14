@@ -1,6 +1,6 @@
 import "./Article.css"
 import { useState , useContext , useEffect} from 'react'
-import {allCheckBoxes,allCheckBoxesValue} from "../../App"
+import {allCheckBoxes,allCheckBoxesValue,CheckBoxesValue} from "../../App"
 const Array = [];
 
 
@@ -11,6 +11,7 @@ const Article = (props) => {
     const [checkbox, setCheckbox] = useState(true)
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
     const {checkBoxAll, setcheckBoxAll} = useContext(allCheckBoxesValue)
+    const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
     
         
       
@@ -50,10 +51,13 @@ const Article = (props) => {
     }
     
         const checkBox = () =>{
+        
         setCheckbox(!checkbox)
         if(checkbox){
         Array.push(dataItems)
         setArticleValue(Array)
+        setCheckBoxValue(checkBoxValue +1)
+        
 }
         else if(!checkbox){
         Array.filter(item =>{
@@ -62,6 +66,7 @@ const Article = (props) => {
         Array.splice(indexArray,1)
     }
     })
+    setCheckBoxValue(checkBoxValue - 1)
     }
         console.log(Array);
         

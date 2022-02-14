@@ -9,13 +9,15 @@ import ArticleProps from "./component/ArticleProps/ArticleProps"
 import {createContext, useState} from "react"
 const  allCheckBoxes = createContext({})
 const  allCheckBoxesValue = createContext({})
+const  CheckBoxesValue = createContext({})
 function App() {
   const [checkBoxAll, setcheckBoxAll] = useState(false)
   const [articleSelection,setarticleSelection] = useState(false)
-  
+  const [checkBoxValue, setCheckBoxValue] = useState(0)
   return (
     
     <div className="App">
+      <CheckBoxesValue.Provider value = {{checkBoxValue, setCheckBoxValue}}>
       <allCheckBoxesValue.Provider value ={{checkBoxAll, setcheckBoxAll}}>
       <allCheckBoxes.Provider value={{articleSelection,setarticleSelection}}>
     <Header/>
@@ -27,8 +29,9 @@ function App() {
       <ArticleProps/>
       </allCheckBoxes.Provider>
       </allCheckBoxesValue.Provider>
+      </CheckBoxesValue.Provider>
     </div>
   );
 }
-export {allCheckBoxes,allCheckBoxesValue}
+export {allCheckBoxes,allCheckBoxesValue,CheckBoxesValue}
 export default App;

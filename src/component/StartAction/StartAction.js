@@ -2,67 +2,63 @@ import "./StartAction.css"
 import { useState , useContext} from "react"
 import {Array} from "../Article/Article"
 import {allCheckBoxes,allCheckBoxesValue,CheckBoxesValue} from "../../App"
+import { Link } from "react-router-dom";
 
-const  itemsLength = [];
 const StartAction = () => {
     const [countItems, setCountItems] = useState("223 Items")
+    /*########## Variable to show all checkboxes ##########*/
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
+    /*########## Variable  to select all checkboxes with one click ##########*/
     const {checkBoxAll, setcheckBoxAll} = useContext(allCheckBoxesValue)
-    const {checkBoxAllValue, setcheckBoxAllValue} = useContext(allCheckBoxesValue)
+    /*########## Variable to count the tshirts when selected ##########*/
     const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
 
 
 
-/*Function  to select all Checkboxes with one click and to push the values from all tshirst*/
+/*########## Function  to select all Checkboxes with one click and to push the values from all tshirst ##########*/
+
 const inputSelectAllCheckbox = () => {
         
         let boxes = document.querySelectorAll(".checkBox")
             setcheckBoxAll(!checkBoxAll)
-        if(!checkBoxAll){
+            if(!checkBoxAll){
             boxes.forEach(checkbox =>{
             checkbox.checked = true
             Array.push(JSON.parse(checkbox.value) )
- /*for loop for text 0 of 6 items*/
+            
+
+
             for(var i=0; i<boxes.length; i++){
             setCountItems(`${i + 1} of ${i + 1} items selected`)
             }
-            
             })
             }else{
             boxes.forEach(checkbox =>{
             checkbox.checked = false
             Array.length = 0
-            
         })
             for(var i=0; i<boxes.length; i++){
-                setCountItems(` ${i + 1} items selected`)
-            } 
-            
+            setCountItems(` ${i + 1} items selected`)
+        } 
         }
         console.log(Array);
-    }
+        }
 
+/*### Function to toggle the background color of the START ACTION button, and to change the text from 223 Items to (0 of tshirt.length) ###*/
 
-/*Function to toggle the background color of the START ACTION button, and to change the text from 223 Items to (0 of tshirt.length)*/
 const StartActionButton = () => {
     
     let boxes = document.querySelectorAll(".articleSection")
-    console.log(boxes);
     setarticleSelection(!articleSelection)
-    
     if(!articleSelection){
-        
-       
     for (let i = 0; i < boxes.length; i++) {
     setCountItems(` of ${i + 1}  items selected`)    
 }
 }
     else{
     setCountItems("223 Items")
-    
 }
     setarticleSelection(!articleSelection)
-    
 }
 
     return (
@@ -74,6 +70,7 @@ const StartActionButton = () => {
             ) }
             </div>
             <p>{`${articleSelection ? checkBoxValue : ""} ${countItems} `}</p>
+            <Link to="/selectedTshirts">Klick</Link>
             <img className="playImg" src="./img/play-circle.png" alt="" />
         </section>
       );

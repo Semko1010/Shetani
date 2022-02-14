@@ -1,6 +1,6 @@
 import "./Article.css"
 import { useState , useContext , useEffect} from 'react'
-import {allCheckBoxes,allCheckBoxesValue,CheckBoxesValue} from "../../App"
+import {allCheckBoxes,CheckBoxesValue} from "../../App"
 const Array = [];
 
 
@@ -10,55 +10,26 @@ const Article = (props) => {
     const [articleValue, setArticleValue] = useState([])
     const [checkbox, setCheckbox] = useState(true)
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
-    const {checkBoxAll, setcheckBoxAll} = useContext(allCheckBoxesValue)
     const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
     
-        
-      
+/*########## Function to show Tshirt Menu ##########*/        
     const showMenu = () => {
-        
-        // let boxes = document.querySelectorAll(".checkBox")
-        
-        // if(!checkBoxAll){
-        //     boxes.forEach(checkbox =>{
-        //     checkbox.checked = true
-        //     Array.push(dataItems)
-            
-            
-        //     console.log(Array);
-        //     })
-        // }else{
-        //     boxes.forEach(checkbox =>{
-        //     checkbox.checked = false
-        //     Array.filter(item =>{
-        //     console.log(item);
-        //     if(item.tshirtNummer === dataItems.tshirtNummer){
-        //     const indexArray =Array.indexOf(item)
-        //     Array.splice(indexArray,1)
-        //     console.log(Array);
-        //     }
-                
-        //             })
-        //         })
-                
-        // }
         setvisibleMenu(false) 
-       
     }
-    
+
+/*########## Function to close Tshirt Menu ##########*/      
     const closeMenu = () => {
         setvisibleMenu(true) 
     }
-    
+
+/*########## Function select each tshirt and push the values of the tshirt ##########*/          
         const checkBox = () =>{
-        
         setCheckbox(!checkbox)
         if(checkbox){
         Array.push(dataItems)
         setArticleValue(Array)
         setCheckBoxValue(checkBoxValue +1)
-        
-}
+    }
         else if(!checkbox){
         Array.filter(item =>{
         if(item.tshirtNummer === props.tshirtNummer){
@@ -66,7 +37,7 @@ const Article = (props) => {
         Array.splice(indexArray,1)
     }
     })
-    setCheckBoxValue(checkBoxValue - 1)
+        setCheckBoxValue(checkBoxValue - 1)
     }
         console.log(Array);
         
@@ -92,7 +63,6 @@ return (
     
     <article>
 
-    
         <div>
             <img onClick={showMenu} className="tshirtImg" src="./img/tshirt.png" alt="" />
             <h3>T-Shirt - #{props.tshirtNummer}</h3>

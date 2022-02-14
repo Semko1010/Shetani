@@ -21,29 +21,25 @@ const inputSelectAllCheckbox = () => {
         if(!checkBoxAll){
             boxes.forEach(checkbox =>{
             checkbox.checked = true
-            Array.push(checkbox.value)
+            Array.push(JSON.parse(checkbox.value) )
  /*for loop for text 0 of 6 items*/
             for(var i=0; i<boxes.length; i++){
             setCountItems(`${i + 1} of ${i + 1} items selected`)
             }
-            console.log(Array);
+            
             })
             }else{
             boxes.forEach(checkbox =>{
             checkbox.checked = false
-            Array.filter(item =>{
-            if(item === checkbox.value){
-            const indexArray =Array.indexOf(item)
-            Array.splice(indexArray,1)
-            console.log(Array);
-            }
-                
-            })
-            })
+            Array.length = 0
+            
+        })
             for(var i=0; i<boxes.length; i++){
                 setCountItems(` ${i + 1} items selected`)
-            }    
+            } 
+            
         }
+        console.log(Array);
     }
 
 

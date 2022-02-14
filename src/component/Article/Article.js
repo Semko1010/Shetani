@@ -173,7 +173,7 @@ return (
 {articleSelection &&(
 <section className="articleSelection">
 <label htmlFor="Select Item"></label>
-<input onChange={checkBox} type="checkbox"   className="checkBox" value ={props.tshirtNummer}  
+<input onChange={checkBox} type="checkbox"   className="checkBox" value ={JSON.stringify(dataItems)}  
   />
 
 </section>

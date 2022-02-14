@@ -1,15 +1,12 @@
-import StartAction from "../StartAction/StartAction"
+import "./Article.css"
 import { useState , useContext } from 'react'
 import {allCheckBoxes} from "../../App"
-import "./Article.css"
-
 const Array = [];
 
 
 const Article = (props) => {
     const dataItems = {salesRate:props.salesRate,firstSales:props.firstSales,perWeek:props.perWeek,returnRate:props.returnRate,price:props.price,tshirtNummer:props.tshirtNummer}
     const [visibleMenu, setvisibleMenu] = useState(true)
-    // const [articleSelection,setarticleSelection] = useState(false)
     const [articleValue, setArticleValue] = useState([])
     const [checkbox, setCheckbox] = useState(true)
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
@@ -21,28 +18,20 @@ const Article = (props) => {
     const closeMenu = () => {
         setvisibleMenu(true) 
     }
-    const articleSelect = () => {
-        console.log("test");
-        setarticleSelection(true)
-     
-    }
     
-
-    const checkBox = () =>{
+        const checkBox = () =>{
         setCheckbox(!checkbox)
         if(checkbox){
         Array.push(dataItems)
         setArticleValue(Array)
 }
-    else if(!checkbox){
+        else if(!checkbox){
         Array.filter(item =>{
         if(item.tshirtNummer === props.tshirtNummer){
         const indexArray =Array.indexOf(item)
         Array.splice(indexArray,1)
-        }
-    
-        })
-        
+    }
+    })
     }
         console.log(Array);
         
@@ -149,7 +138,7 @@ return (
 {articleSelection &&(
 <section className="articleSelection">
 <label htmlFor="Select Item"></label>
-<input onChange={checkBox} type="checkbox"   className="checking" value ={props.tshirtNummer}  
+<input onChange={checkBox} type="checkbox"   className="checkBox" value ={props.tshirtNummer}  
   />
 
 </section>

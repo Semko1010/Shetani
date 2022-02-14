@@ -1,14 +1,14 @@
 import "./StartAction.css"
 import { useState , useContext} from "react"
 import {Array} from "../Article/Article"
-import {allCheckBoxes} from "../../App"
+import {allCheckBoxes,allCheckBoxesValue} from "../../App"
 
 const  itemsLength = [];
 const StartAction = () => {
-    const [checkBoxAll, setcheckBoxAll] = useState(false)
     const [countItems, setCountItems] = useState("223 Items")
+    const [allCheckBoxesValues, setAllCheckBoxesValues] = useState(0)
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
-    
+    const {checkBoxAll, setcheckBoxAll} = useContext(allCheckBoxesValue)
 
 
 
@@ -18,31 +18,34 @@ const StartAction = () => {
 const inputSelectAllCheckbox = () => {
         
         let boxes = document.querySelectorAll(".checkBox")
-        setcheckBoxAll(!checkBoxAll)
+            setcheckBoxAll(!checkBoxAll)
         if(!checkBoxAll){
             boxes.forEach(checkbox =>{
             checkbox.checked = true
             Array.push(checkbox.value)
-            itemsLength.push(checkbox.length)
-            console.log(itemsLength);
+            for(var i=0; i<boxes.length; i++){
+                setCountItems(`${i + 1} of ${i + 1} items selected`)
+            }
             console.log(Array);
             })
-        }else{
+            }else{
             boxes.forEach(checkbox =>{
-                checkbox.checked = false
-                Array.filter(item =>{
-                    if(item === checkbox.value){
-                    const indexArray =Array.indexOf(item)
-                    Array.splice(indexArray,1)
-                    console.log(Array);
-                    }
+            checkbox.checked = false
+            Array.filter(item =>{
+            if(item === checkbox.value){
+            const indexArray =Array.indexOf(item)
+            Array.splice(indexArray,1)
+            console.log(Array);
+            }
                 
-                    })
-                })
-                
+            })
+            })
+            for(var i=0; i<boxes.length; i++){
+                setCountItems(`0 of ${i + 1} items selected`)
+            }    
         }
-        
-        
+       
+        console.log(allCheckBoxesValues);
 }
 
 

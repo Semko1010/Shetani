@@ -4,40 +4,14 @@ import { useState } from "react"
 import Article from "../Article/Article"
 import StartAction from "../StartAction/StartAction"
 import {Array} from "../Article/Article"
-const  itemsLength = [];
+
 const ArticleProps = () => {
-const [checkBoxAll, setcheckBoxAll] = useState(false)
+
    
-    const selectAll = () => {
-        let boxes = document.querySelectorAll(".checking")
-        setcheckBoxAll(!checkBoxAll)
-        if(!checkBoxAll){
-            boxes.forEach(checkbox =>{
-            checkbox.checked = true
-            Array.push(checkbox.value)
-            itemsLength.push(checkbox.length)
-            console.log(Array);
-            })
-        }else{
-            boxes.forEach(checkbox =>{
-                checkbox.checked = false
-                Array.filter(item =>{
-                    if(item === checkbox.value){
-                    const indexArray =Array.indexOf(item)
-                    Array.splice(indexArray,1)
-                    console.log(Array);
-                    }
-                
-                    })
-                })
-                
-        }
-        
-        
-}
+    
     return (
         <div>
-        <StartAction selectAll={selectAll}/>
+        <StartAction />
 
        
         <section className="articleSectionGrid">

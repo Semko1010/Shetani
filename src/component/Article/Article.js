@@ -1,5 +1,5 @@
 import StartAction from "../StartAction/StartAction"
-import { useState } from 'react'
+import { useState , useContext } from 'react'
 import "./Article.css"
 import { render } from "@testing-library/react";
 const Array = [];

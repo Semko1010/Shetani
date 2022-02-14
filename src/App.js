@@ -21,7 +21,6 @@ function App() {
       <allCheckBoxesValue.Provider value ={{checkBoxAll, setcheckBoxAll}}>
       <allCheckBoxes.Provider value={{articleSelection,setarticleSelection}}>
     <Header/>
-    
     <Menu/>
     <SideBar/>
    

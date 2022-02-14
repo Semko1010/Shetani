@@ -55,14 +55,18 @@ const StartActionButton = () => {
     setarticleSelection(!articleSelection)
     
     if(!articleSelection){
+        
+       
     for (let i = 0; i < boxes.length; i++) {
     setCountItems(` of ${i + 1}  items selected`)    
 }
 }
     else{
     setCountItems("223 Items")
+    
 }
     setarticleSelection(!articleSelection)
+    
 }
 
     return (
@@ -73,7 +77,7 @@ const StartActionButton = () => {
             <input onChange={inputSelectAllCheckbox} type="checkbox" />
             ) }
             </div>
-            <p>{`${checkBoxValue} ${countItems} `}</p>
+            <p>{`${articleSelection ? checkBoxValue : ""} ${countItems} `}</p>
             <img className="playImg" src="./img/play-circle.png" alt="" />
         </section>
       );

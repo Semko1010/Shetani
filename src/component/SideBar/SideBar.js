@@ -19,8 +19,8 @@ const SideBar = () => {
            <div></div> 
            </section>
 
-           <article style={{opacity: width ? "0" : "1", transform: `translateX(${width ? "-130" : "0px"})`}}>
-            <ul>
+           <article >
+            <ul style={{opacity: width  ? "0" : "1"}}>
                <li>Back to Home</li>
                <li>My Account</li>
                <li>About this Page</li>

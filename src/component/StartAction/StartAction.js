@@ -17,11 +17,12 @@ const StartAction = () => {
 
 /*########## Function  to select all Checkboxes with one click and to push the values from all tshirst ##########*/
 
-const inputSelectAllCheckbox = () => {
-        
-        let boxes = document.querySelectorAll(".checkBox")
+const inputSelectAllCheckbox = (e) => {
+            const chekingBox = e.target.checked;
+            Array.length = 0;
+            let boxes = document.querySelectorAll(".checkBox")
             setcheckBoxAll(!checkBoxAll)
-            if(!checkBoxAll){
+            if(chekingBox){
             boxes.forEach(checkbox =>{
             checkbox.checked = true
             Array.push(JSON.parse(checkbox.value) )
@@ -70,8 +71,8 @@ const StartActionButton = () => {
             ) }
             </div>
             <p>{`${articleSelection ? checkBoxValue : ""} ${countItems} `}</p>
-            <Link to="/selectedTshirts"> <button onClick={()=>{setarticleSelection(!articleSelection)}}><img className="playImg" src="./img/play-circle.png" alt="" /></button> </Link>
-            
+            {/* <Link to="/selectedTshirts"> <button onClick={()=>{setarticleSelection(!articleSelection)}}></button> </Link> */}
+            <img className="playImg" src="./img/play-circle.png" alt="" />
         </section>
       );
 }

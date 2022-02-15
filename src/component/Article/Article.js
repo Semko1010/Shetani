@@ -23,27 +23,30 @@ const Article = (props) => {
     }
 
 /*########## Function select each tshirt and push the values of the tshirt ##########*/          
-        const checkBox = () =>{
-        setCheckbox(!checkbox)
-        if(checkbox){
+        const checkBox = (e) =>{
+        
+        const chekingBox = e.target.checked;
+         
+        if(chekingBox) {
         Array.push(dataItems)
         setArticleValue(Array)
         setCheckBoxValue(checkBoxValue +1)
-    }
-        else if(!checkbox){
-        Array.filter(item =>{
-        if(item.tshirtNummer === props.tshirtNummer){
-        const indexArray = Array.indexOf(item)
-        Array.splice(indexArray,1)
-    }
-    })
-        setCheckBoxValue(checkBoxValue - 1)
-    }
-        console.log(Array);
+        }else{
+            Array.filter(item =>{
+            if(item.tshirtNummer === props.tshirtNummer){
+            const indexArray = Array.indexOf(item)
+            Array.splice(indexArray,1)
+            }
+            })
+            setCheckBoxValue(checkBoxValue - 1)
+        }
+        
+            console.log(Array);
         
 
 }
 
+    
 
 return (
     
@@ -143,7 +146,7 @@ return (
 {articleSelection &&(
 <section className="articleSelection">
 <label htmlFor="Select Item"></label>
-<input onChange={checkBox} type="checkbox"   className="checkBox" value ={JSON.stringify(dataItems)}  
+<input onChange={checkBox} type="checkbox"    className="checkBox" value ={JSON.stringify(dataItems)}  
   />
 
 </section>

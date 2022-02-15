@@ -35,7 +35,7 @@ function App() {
             
       <Routes>
         <Route path="/"  element={[<Header/>,<Menu/>,<SideBar/>,<ArticleProps/>]}/> 
-        <Route path="/selectedTshirts"  element={<SelectedTshirts/>}/> 
+        {/* <Route path="/selectedTshirts"  element={<SelectedTshirts/>}/>  */}
         </Routes> 
       </allCheckBoxes.Provider>
       </allCheckBoxesValue.Provider>

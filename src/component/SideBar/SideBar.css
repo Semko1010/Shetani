@@ -18,7 +18,8 @@
     width: 15px;
     height:2px;
     background-color: white;
-    margin: 3px auto ;
+    margin: 5px auto ;
+    transition: all 0.5s
 }
 
 .sideBar  ul{

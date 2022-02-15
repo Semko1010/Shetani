@@ -36,7 +36,7 @@ const inputSelectAllCheckbox = (e) => {
             }else{
             boxes.forEach(checkbox =>{
             checkbox.checked = false
-            Array.length = 0
+            
         })
             for(var i=0; i<boxes.length; i++){
             setCountItems(` ${i + 1} items selected`)
@@ -48,7 +48,7 @@ const inputSelectAllCheckbox = (e) => {
 /*### Function to toggle the background color of the START ACTION button, and to change the text from 223 Items to (0 of tshirt.length) ###*/
 
 const StartActionButton = () => {
-    
+    Array.length = 0;
     let boxes = document.querySelectorAll(".articleSection")
     setarticleSelection(!articleSelection)
     if(!articleSelection){

@@ -5,7 +5,7 @@ const Array = [];
 
 
 const Article = (props) => {
-    const dataItems = {salesRate:props.salesRate,firstSales:props.firstSales,perWeek:props.perWeek,returnRate:props.returnRate,price:props.price,tshirtNummer:props.tshirtNummer}
+    const dataItems = {salesRate:props.salesRate, firstSales:props.firstSales, perWeek:props.perWeek, returnRate:props.returnRate, price:props.price, tshirtNummer:props.tshirtNummer, allStatus:props.allStatus, salesStatus:props.salesStatus, stStatus:props.stStatus,perWeekStatus:props.perWeekStatus, ReturnRateStatus:props.ReturnRateStatus}
     const [visibleMenu, setvisibleMenu] = useState(true)
     const [articleValue, setArticleValue] = useState([])
     const [checkbox, setCheckbox] = useState(true)

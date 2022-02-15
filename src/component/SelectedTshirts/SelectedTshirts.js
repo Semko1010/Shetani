@@ -15,9 +15,10 @@ const resetArray = () => {
         
         <section className="selectedTshirts">
         
-        { Array.map(e =>
+        { Array.map((e, index) =>
         
         <Article
+        key ={index}
         salesRate = {e.salesRate}
         firstSales = {e.firstSales}
         perWeek = {e.perWeek}
@@ -29,11 +30,11 @@ const resetArray = () => {
         stStatus = {e.stStatus}
         perWeekStatus = {e.perWeek}
         ReturnRateStatus = {e.ReturnRateStatus}   
-        allStatus = {"green"}
-        salesStatus = {"green"}
-        stStatus = {"green"}
-        perWeekStatus = {"green"}
-        ReturnRateStatus = {"green"}
+        allStatus = {e.allStatus}
+        salesStatus = {e.salesStatus}
+        stStatus = {e.stStatus}
+        perWeekStatus = {e.perWeekStatus}
+        ReturnRateStatus = {e.ReturnRateStatus}
 
         />
         

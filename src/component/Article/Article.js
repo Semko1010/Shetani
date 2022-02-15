@@ -25,9 +25,9 @@ const Article = (props) => {
 /*########## Function select each tshirt and push the values of the tshirt ##########*/          
         const checkBox = (e) =>{
         
-        const chekingBox = e.target.checked;
+        const chekingBoxes = e.target.checked;
          
-        if(chekingBox) {
+        if(chekingBoxes) {
         Array.push(dataItems)
         setArticleValue(Array)
         setCheckBoxValue(checkBoxValue +1)

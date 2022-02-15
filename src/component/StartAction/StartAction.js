@@ -27,19 +27,19 @@ const inputSelectAllCheckbox = (e) => {
             checkbox.checked = true
             Array.push(JSON.parse(checkbox.value) )
             
-
-
             for(var i=0; i<boxes.length; i++){
-            setCountItems(`${i + 1} of ${i + 1} items selected`)
+            setCountItems(` 6 of ${i + 1} items selected`)
+            setCheckBoxValue("")
             }
             })
             }else{
+                setCheckBoxValue(0)
             boxes.forEach(checkbox =>{
             checkbox.checked = false
             
         })
             for(var i=0; i<boxes.length; i++){
-            setCountItems(` ${i + 1} items selected`)
+            setCountItems(`  of ${i + 1} items selected`)
         } 
         }
         console.log(Array);
@@ -53,7 +53,7 @@ const StartActionButton = () => {
     setarticleSelection(!articleSelection)
     if(!articleSelection){
     for (let i = 0; i < boxes.length; i++) {
-    setCountItems(` of ${i + 1}  items selected`)    
+    setCountItems(`  of ${i + 1}  items selected`)    
 }
 }
     else{

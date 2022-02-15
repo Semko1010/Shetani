@@ -71,10 +71,10 @@ const StartActionButton = () => {
             ) }
             </div>
             <p>{`${articleSelection ? checkBoxValue : ""} ${countItems} `}</p>
-            {/* <Link to="/selectedTshirts"> <button onClick={()=>{setarticleSelection(!articleSelection)}}></button> </Link> */}
-            <img className="playImg" src="./img/play-circle.png" alt="" />
+            <Link to="/selectedTshirts"> <img onClick={()=>{setarticleSelection(!articleSelection)}} className="playImg" src="./img/play-circle.png" alt="" /> </Link>
+            
         </section>
-      );
+    );
 }
  
 export default StartAction;

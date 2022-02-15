@@ -3,3 +3,15 @@
     grid-template-columns: 30vw 30vw 30vw;
     gap: 0 30px;
 }
+
+.selectedTshirtsMain {
+    text-align: center;
+    
+}
+.selectedTshirtsMain button{
+    background-color: #247BFF;
+    padding: 10px 35px;
+    margin: 30px 0;
+    border: none;
+    
+}

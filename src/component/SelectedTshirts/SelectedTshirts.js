@@ -6,6 +6,7 @@ const SelectedTshirts = () => {
 /*########## Function to reset the Array*/
 const resetArray = () => {
     Array.length = 0;
+    window.location.replace("/")
 }
 
     return ( 
@@ -15,7 +16,7 @@ const resetArray = () => {
         
         <section className="selectedTshirts">
         
-        { Array.map((e, index) =>
+        {Array.map((e, index) =>
         
         <Article
         key ={index}

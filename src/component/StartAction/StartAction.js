@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 const StartAction = () => {
 
-    const [countItems, setCountItems] = useState("")
-    const [countItemsAll, setCountItemsAll] = useState("223")
+   
     /*########## Variable to show all checkboxes ##########*/
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
     /*########## Variable  to select all checkboxes with one click ##########*/

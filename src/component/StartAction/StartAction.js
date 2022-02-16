@@ -12,6 +12,7 @@ const StartAction = () => {
     const {checkBoxAll, setcheckBoxAll} = useContext(allCheckBoxesValue)
     /*########## Variable to count the tshirts when selected ##########*/
     const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
+    
 
 
 
@@ -28,7 +29,7 @@ const inputSelectAllCheckbox = (e) => {
             Array.push(JSON.parse(checkbox.value) )
             
             for(var i=0; i<boxes.length; i++){
-            setCountItems(` 6 of ${i + 1} items selected`)
+            setCountItems(` ${i + 1} of ${i + 1} items selected`)
             setCheckBoxValue("")
             }
             })
@@ -39,7 +40,7 @@ const inputSelectAllCheckbox = (e) => {
             
         })
             for(var i=0; i<boxes.length; i++){
-            setCountItems(`  of ${i + 1} items selected`)
+            setCountItems(`  ${checkBoxValue} of ${i + 1} items selected`)
         } 
         }
         console.log(Array);
@@ -70,7 +71,7 @@ const StartActionButton = () => {
             <input onChange={inputSelectAllCheckbox} type="checkbox" />
             ) }
             </div>
-            <p>{`${articleSelection ? checkBoxValue : ""} ${countItems} `}</p>
+            <p>{`${articleSelection ? checkBoxValue : ""} ${countItems}`}</p>
             <Link to="/selectedTshirts"> <img onClick={()=>{setarticleSelection(!articleSelection)}} className="playImg" src="./img/play-circle.png" alt="" /> </Link>
             
         </section>

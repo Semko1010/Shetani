@@ -6,7 +6,7 @@ const SelectedTshirts = () => {
 /*########## Function to reset the Array*/
 const resetArray = () => {
     Array.length = 0;
-    window.location.replace("/")
+    
 }
 
     return ( 

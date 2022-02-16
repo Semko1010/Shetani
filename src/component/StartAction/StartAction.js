@@ -5,13 +5,16 @@ import {allCheckBoxes,allCheckBoxesValue,CheckBoxesValue} from "../../App"
 import { Link } from "react-router-dom";
 
 const StartAction = () => {
-    const [countItems, setCountItems] = useState("223 Items")
+
+    const [countItems, setCountItems] = useState("")
+    const [countItemsAll, setCountItemsAll] = useState("223")
     /*########## Variable to show all checkboxes ##########*/
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
     /*########## Variable  to select all checkboxes with one click ##########*/
     const {checkBoxAll, setcheckBoxAll} = useContext(allCheckBoxesValue)
     /*########## Variable to count the tshirts when selected ##########*/
     const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
+    const [checkBoxValueNew, setCheckBoxValueNew] = useState(0)
     
 
 
@@ -24,24 +27,16 @@ const inputSelectAllCheckbox = (e) => {
             let boxes = document.querySelectorAll(".checkBox")
             setcheckBoxAll(!checkBoxAll)
             if(chekingBox){
+            setCheckBoxValue(6)
             boxes.forEach(checkbox =>{
             checkbox.checked = true
             Array.push(JSON.parse(checkbox.value) )
-            
-            for(var i=0; i<boxes.length; i++){
-            setCountItems(` ${i + 1} of ${i + 1} items selected`)
-            setCheckBoxValue("")
-            }
-            })
+        })
             }else{
-                setCheckBoxValue(0)
+            setCheckBoxValue(0)
             boxes.forEach(checkbox =>{
             checkbox.checked = false
-            
-        })
-            for(var i=0; i<boxes.length; i++){
-            setCountItems(`  ${checkBoxValue} of ${i + 1} items selected`)
-        } 
+            })
         }
         console.log(Array);
         }
@@ -50,16 +45,6 @@ const inputSelectAllCheckbox = (e) => {
 
 const StartActionButton = () => {
     Array.length = 0;
-    let boxes = document.querySelectorAll(".articleSection")
-    setarticleSelection(!articleSelection)
-    if(!articleSelection){
-    for (let i = 0; i < boxes.length; i++) {
-    setCountItems(`  of ${i + 1}  items selected`)    
-}
-}
-    else{
-    setCountItems("223 Items")
-}
     setarticleSelection(!articleSelection)
 }
 
@@ -71,7 +56,7 @@ const StartActionButton = () => {
             <input onChange={inputSelectAllCheckbox} type="checkbox" />
             ) }
             </div>
-            <p>{`${articleSelection ? checkBoxValue : ""} ${countItems}`}</p>
+            <p>{`${articleSelection ? `${checkBoxValue} of 6 items selected` : "223 items selected"} `}</p>
             <Link to="/selectedTshirts"> <img onClick={()=>{setarticleSelection(!articleSelection)}} className="playImg" src="./img/play-circle.png" alt="" /> </Link>
             
         </section>

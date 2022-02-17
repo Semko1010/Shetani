@@ -62,7 +62,7 @@ useEffect(() => {
         
     }
     
-  } );
+} );
 
 
     return (
@@ -74,7 +74,7 @@ useEffect(() => {
             ) }
             </div>
             <p>{`${articleSelection ? `${checkBoxValue} of ${checkBoxValueNew} items selected` : "223 items selected"} `}</p>
-            <Link to="/selectedTshirts"> <img onClick={()=>{setarticleSelection(!articleSelection)}} className="playImg" src="./img/play-circle.png" alt="" /> </Link>
+            <Link to="/selectedTshirts"> <img onClick={()=>{setarticleSelection(false)}} className="playImg" src="./img/play-circle.png" alt="" /> </Link>
             
         </section>
     );

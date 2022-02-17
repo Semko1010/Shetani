@@ -1,32 +1,29 @@
 import "./Article.css"
-import { useState , useContext , useEffect} from 'react'
+import { useState , useContext } from 'react'
 import {allCheckBoxes,CheckBoxesValue} from "../../App"
 const Array = [];
 
 
 const Article = (props) => {
+    /*########## One variable for all props ##########*/    
     const dataItems = {salesRate:props.salesRate, firstSales:props.firstSales, perWeek:props.perWeek, returnRate:props.returnRate, price:props.price, tshirtNummer:props.tshirtNummer, allStatus:props.allStatus, salesStatus:props.salesStatus, stStatus:props.stStatus,perWeekStatus:props.perWeekStatus, ReturnRateStatus:props.ReturnRateStatus}
+     /*########## state for s ##########*/  
     const [visibleMenu, setvisibleMenu] = useState(true)
     const [articleValue, setArticleValue] = useState([])
-    const [checkbox, setCheckbox] = useState(true)
     const {articleSelection,setarticleSelection} = useContext(allCheckBoxes)
     const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
     
-/*########## Function to show Tshirt Menu ##########*/        
+/*########## Function to show/close Tshirt Menu ##########*/        
     const showMenu = () => {
-        setvisibleMenu(false) 
+        setvisibleMenu(!visibleMenu) 
     }
 
-/*########## Function to close Tshirt Menu ##########*/      
-    const closeMenu = () => {
-        setvisibleMenu(true) 
-    }
 
 /*########## Function select each tshirt and push the values of the tshirt ##########*/          
         const checkBox = (e) =>{
         
         const chekingBoxes = e.target.checked;
-         
+        
         if(chekingBoxes) {
         Array.push(dataItems)
         setArticleValue(Array)
@@ -40,10 +37,7 @@ const Article = (props) => {
             })
             setCheckBoxValue(checkBoxValue - 1)
         }
-        
             console.log(Array);
-        
-
 }
 
     
@@ -140,7 +134,7 @@ return (
         <button>Show</button>
         <button>Select</button>
         <button>Define a Target</button>
-        <button onClick={closeMenu}>Cancel</button>
+        <button onClick={showMenu}>Cancel</button>
     </section>
 )}
 {articleSelection &&(

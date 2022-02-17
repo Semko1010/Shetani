@@ -1,5 +1,5 @@
 import "./StartAction.css"
-import { useState , useContext} from "react"
+import { useState , useContext , useEffect} from "react"
 import {Array} from "../Article/Article"
 import {allCheckBoxes,allCheckBoxesValue,CheckBoxesValue} from "../../App"
 import { Link } from "react-router-dom";
@@ -15,21 +15,23 @@ const StartAction = () => {
     const {checkBoxValue, setCheckBoxValue} = useContext(CheckBoxesValue)
     const [checkBoxValueNew, setCheckBoxValueNew] = useState(0)
     
-
+    
 
 
 /*########## Function  to select all Checkboxes with one click and to push the values from all tshirst ##########*/
 
 const inputSelectAllCheckbox = (e) => {
+   
             const chekingBox = e.target.checked;
             Array.length = 0;
             let boxes = document.querySelectorAll(".checkBox")
             setcheckBoxAll(!checkBoxAll)
             if(chekingBox){
-            setCheckBoxValue(6)
             boxes.forEach(checkbox =>{
             checkbox.checked = true
             Array.push(JSON.parse(checkbox.value) )
+            setCheckBoxValue(boxes.length)
+            
         })
             }else{
             setCheckBoxValue(0)
@@ -41,11 +43,27 @@ const inputSelectAllCheckbox = (e) => {
         }
 
 /*### Function to toggle the background color of the START ACTION button, and to change the text from 223 Items to (0 of tshirt.length) ###*/
-
 const StartActionButton = () => {
+    setCheckBoxValue(0)
     Array.length = 0;
     setarticleSelection(!articleSelection)
+    // let boxes = document.querySelectorAll(".checkBox")
+    // boxes.forEach(e =>{
+    //     setCheckBoxValueNew(boxes.length)
+    // })
+    
+    
 }
+
+useEffect(() => {
+    let boxes = document.querySelectorAll(".checkBox")
+    for(let i = 0; i < boxes.length; i++){
+        setCheckBoxValueNew(i + 1)
+        
+    }
+    
+  } );
+
 
     return (
         <section className="startSection">
@@ -55,7 +73,7 @@ const StartActionButton = () => {
             <input onChange={inputSelectAllCheckbox} type="checkbox" />
             ) }
             </div>
-            <p>{`${articleSelection ? `${checkBoxValue} of 6 items selected` : "223 items selected"} `}</p>
+            <p>{`${articleSelection ? `${checkBoxValue} of ${checkBoxValueNew} items selected` : "223 items selected"} `}</p>
             <Link to="/selectedTshirts"> <img onClick={()=>{setarticleSelection(!articleSelection)}} className="playImg" src="./img/play-circle.png" alt="" /> </Link>
             
         </section>

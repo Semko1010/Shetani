@@ -24,25 +24,23 @@ function App() {
   return (
     
     <div className="App">
-      <Router>
+    <Router>
       
       <CheckBoxesValue.Provider value = {{checkBoxValue, setCheckBoxValue}}>
       <allCheckBoxesValue.Provider value ={{checkBoxAll, setcheckBoxAll}}>
       <allCheckBoxes.Provider value={{articleSelection,setarticleSelection}}>
     
-            
-      {/* <Header/>,<Menu/>,<SideBar/>,<ArticleProps/> */}
-            
-      <Routes>
-        <Route path="/"  element={[<Header/>,<Menu/>,<SideBar/>,<ArticleProps/>]}/> 
-        <Route path="/selectedTshirts"  element={<SelectedTshirts/>}/> 
+        <Routes>
+          <Route path="/"  element={[<Header/>,<Menu/>,<SideBar/>,<ArticleProps/>]}/> 
+          <Route path="/selectedTshirts"  element={<SelectedTshirts/>}/> 
         </Routes> 
+
       </allCheckBoxes.Provider>
       </allCheckBoxesValue.Provider>
       </CheckBoxesValue.Provider>
-     
-        
-      </Router>
+
+    </Router>
+    
     </div>
   );
 }

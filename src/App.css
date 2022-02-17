@@ -9,3 +9,6 @@ background-color:  #1F1F1F;
     grid-template-columns: 30vw 30vw 30vw;
     gap: 0 30px;
 }
+.App{
+    padding: 0 0 5vh 0;
+}

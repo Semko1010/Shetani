@@ -5,7 +5,6 @@ const SideBar = () => {
 
   const showSidebar = () => {
     setWidth(!width);
-
     console.log(width);
   };
 
@@ -15,11 +14,11 @@ const SideBar = () => {
       style={{ width: width ? "44px" : "250px", cursor: "pointer" }}
       onClick={showSidebar}>
       <section>
-      <div
-      style={{
+        <div
+          style={{
             width: width ? "15px" : "100px",
             height: width ? "2px" : "4px",
-      }}></div>
+          }}></div>
         <div
           style={{
             width: width ? "15px" : "100px",

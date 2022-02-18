@@ -1,5 +1,5 @@
 .articleSection {
-    position: relative;
+position: relative;
 background-color: #292929;
 margin: 3vh 0 0 5vw;
 width: 30vw;
@@ -21,12 +21,12 @@ color: white;
 }
 
 .articleDiv img{
-    width:25px;
-    margin: 0 0 0 10px;
+width:25px;
+margin: 0 0 0 10px;
 }
 .tshirtImg{
-    width: 100%;
-    cursor: pointer;
+width: 100%;
+cursor: pointer;
 }
 
 .articleSection article p{
@@ -80,9 +80,9 @@ margin: 10px;
 
 /*Footer*/
 footer{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    text-align:center;
+display:grid;
+grid-template-columns: repeat(4,1fr);
+text-align:center;
 }
 
 footer h3{
@@ -115,15 +115,15 @@ color: black;
 }
 /*ArticleSelection*/
 .articleSelection{
-    bottom: 0;
-    position: absolute;
-    height:45vh;
-    width:100%;
-    text-align:center;
-    background: linear-gradient(180deg, rgba(4, 85, 208, 0) 0%, #192F51 66.67%);
+bottom: 0;
+position: absolute;
+height:45vh;
+width:100%;
+text-align:center;
+background: linear-gradient(180deg, rgba(4, 85, 208, 0) 0%, #192F51 66.67%);
 }
 .articleSelection input{
-    margin-top: 30vh;
+margin-top: 30vh;
 width: 40px;
 height: 40px;
 }
